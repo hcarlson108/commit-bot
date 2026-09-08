@@ -3,24 +3,6 @@ on:
   schedule:
     - cron: '0 12 * * *'
   workflow_dispatch:
-permissions:
-  contents: write
-jobs:
-  commit:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: |
-          date >> streak-log.txt
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add streak-log.txt
-          git commit -m "bot at work" || exit 0
-          git pushname: Daily Commit
-on:
-  schedule:
-    - cron: '0 12 * * *'
-  workflow_dispatch:
 jobs:
   commit:
     runs-on: ubuntu-latest
