@@ -15,13 +15,13 @@ GET STARTED - 5 STEPS
 
 5. Within the blank file, paste the following into the blank file:
 
-
-
 name: Daily Commit
 on:
   schedule:
     - cron: '0 12 * * *'
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   commit:
     runs-on: ubuntu-latest
